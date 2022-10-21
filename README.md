@@ -1,3 +1,3 @@
 # README
 
-### Rust study diary
+### Rust Learn Notes
