@@ -2,20 +2,31 @@ fn main() {
     let mut s = String::from("hello");
     s.push_str(", world!");
 
-    let lens = calc_length(&s);
-    println!("{s}");
-    println!("{lens}");
-    change(&mut s);
-    let lens = calc_length(&s);
-    println!("{s}");
-    println!("{lens}");
+    let word = first_word(&s);
+    println!("{word}");
+
+    let u1 = User {
+        username: String::from("admin"),
+        email: String::from("admin@localhost"),
+        sign_in_count: 1,
+        active: true,
+    };
 }
 
-fn calc_length(s: &String) -> usize {
-    s.len()
+fn first_word(s: &String) -> &str {
+    let bytes = s.as_bytes();
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            return &s[0..i];
+        }
+    }
+
+    &s[..]
 }
 
-/// # chang
-fn change(some_string: &mut String) {
-    *some_string = String::from("123");
+struct User {
+    username: String,
+    email: String,
+    sign_in_count: u64,
+    active: bool,
 }
