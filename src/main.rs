@@ -11,6 +11,8 @@ fn main() {
         sign_in_count: 1,
         active: true,
     };
+
+    println!("{:?}", u1);
 }
 
 fn first_word(s: &String) -> &str {
@@ -24,6 +26,7 @@ fn first_word(s: &String) -> &str {
     &s[..]
 }
 
+#[derive(Debug)]
 struct User {
     username: String,
     email: String,
