@@ -12,7 +12,8 @@ fn main() {
         active: true,
     };
 
-    println!("{:?}", u1);
+    println!("{:#?}", u1);
+    dbg!(u1);
 }
 
 fn first_word(s: &String) -> &str {
